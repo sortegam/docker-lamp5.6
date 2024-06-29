@@ -19,5 +19,4 @@ RUN apt-get update && apt-get install -y \
         default-mysql-client \
         wget \
         unzip
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg
-RUN docker-php-ext-install gd iconv intl pdo pdo_mysql mbstring soap gd zip mysqli
+RUN docker-php-ext-install gd iconv intl mbstring soap zip pdo_mysql pdo mcrypt

@@ -31,7 +31,7 @@ Normally exported mysql has redirections or points to the current domain. We can
 
 ### How to restore DB data with a command.
 
-$ docker exec -i docker-mysql-1 mysql -uroot -proot < /path/to/mysql/database.sql
+$ docker exec -i docker-mysql-1 mysql -uroot -proot < /path/to/mysql/database.sql -D database_name
 
 ### License
 

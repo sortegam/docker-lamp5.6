@@ -13,31 +13,12 @@ services:
     # - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
     # certificates
     # - ./nginx/ca/:/etc/nginx/ca/:ro
-    #links:
-    #  - fpm:__DOCKER_PHP_FPM__
-
-  # # php-fpm
-  # fpm:
-  #   build: ./php-fpm
-  #   ports:
-  #     - "9000"
-  #   volumes:
-  #     - ../src:/usr/share/nginx/html
-  #     # Your php.ini
-  #     - ./php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
-  #   # environment:
-  #   # Set your APP env variables here:
-  #   # - APP_KEY=
-  #   # - DB_HOST=
-  #   # - DB_DATABASE=
-  #   # - DB_USERNAME=
-  #   # - DB_PASSWORD=
-  #   links:
-  #     - mysql:mysql
+    links:
+      - mysql:mysql
 
   # database
   mysql:
-    image: mysql
+    image: mysql:5.7
     restart: always
     ports:
       # Allow client to access 3306
