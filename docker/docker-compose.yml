@@ -1,7 +1,7 @@
 services:
   # web server
   php-apache:
-    image: php:5.6-apache-stretch
+    build: ./php-apache
     ports:
       - "8080:80"
       - "8443:443"
